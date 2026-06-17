@@ -1,0 +1,308 @@
+body{
+    margin:0;
+    font-family:"Yu Mincho",serif;
+    background:#ffffff;
+}
+
+/* ヘッダー */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 60px;
+    box-sizing:border-box;
+
+    background:rgba(255,255,255,0.95);
+    z-index:999;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#4a2f1d;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+nav a{
+    text-decoration:none;
+    color:#4a2f1d;
+}
+
+/* メイン画像 */
+.hero{
+    margin-top:80px;
+
+    height:100vh;
+
+    background-image:url("images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-overlay{
+    background:rgba(0,0,0,0.4);
+    padding:50px;
+    border-radius:20px;
+    color:white;
+    text-align:center;
+}
+
+.hero-overlay h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.catchcopy{
+    font-size:28px;
+}
+
+.info{
+    line-height:2;
+    margin:30px 0;
+}
+
+/* ボタン */
+.btn{
+    display:inline-block;
+
+    padding:15px 40px;
+
+    background:#8b5a2b;
+    color:white;
+
+    text-decoration:none;
+    border-radius:50px;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+/* 共通 */
+section{
+    padding:100px 10%;
+}
+
+/* ABOUT */
+.about{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+
+    background:#f8f5f0;
+    color:#4a2f1d;
+}
+
+.about-image img{
+    width:500px;
+    max-width:100%;
+    border-radius:10px;
+}
+
+.about-text{
+    max-width:500px;
+}
+
+.about-text h2{
+    font-size:42px;
+}
+
+/* MENU */
+.menu{
+    text-align:center;
+    background:#ffffff;
+}
+
+.menu h2{
+    font-size:48px;
+    color:#4a2f1d;
+}
+
+.menu-grid{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.menu-item{
+    width:300px;
+
+    transition:0.3s;
+}
+
+.menu-item:hover{
+    transform:translateY(-10px);
+}
+
+.menu-item img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.menu-item h3{
+    color:#4a2f1d;
+}
+
+.menu-item p{
+    color:#8b5a2b;
+    font-size:22px;
+}
+
+/* NEWS */
+.news{
+    background:#f8f5f0;
+}
+
+.news h2{
+    text-align:center;
+    color:#4a2f1d;
+}
+
+.news-list{
+    max-width:800px;
+    margin:auto;
+}
+
+.news-item{
+    display:flex;
+    gap:30px;
+    padding:20px 0;
+    border-bottom:1px solid #ddd;
+    color:#4a2f1d;
+}
+
+/* スマホ対応 */
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-overlay h1{
+        font-size:40px;
+    }
+
+    .catchcopy{
+        font-size:18px;
+    }
+
+    .about{
+        flex-direction:column;
+    }
+
+    .about-image img{
+        width:100%;
+    }
+}
+.hamburger{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:#4a2f1d;
+}
+
+@media (max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    nav{
+        display:none;
+    }
+
+    nav.active{
+        display:block;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:10px;
+        margin-top:15px;
+    }
+}
+nav.active{
+    display:block;
+    background:white;
+    padding:20px 0;
+}
+
+nav.active a{
+    color:#4a2f1d;
+    font-size:18px;
+}
+.fade-in{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.fade-in.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero{
+    transition: background-image 1s ease-in-out;
+}
+.hero{
+    position: relative;
+    overflow: hidden;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: opacity 4s ease-in-out;
+}
+
+.slide1{
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide2{
+    opacity: 0;
+    z-index: 2;
+}
+
+.hero-overlay{
+    position: relative;
+    z-index: 3;
+}
+
+.slide{
+    pointer-events: none;
+}
